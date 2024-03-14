@@ -126,11 +126,11 @@ Transform:
   m_GameObject: {fileID: 5790021864476640421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.85861015, w: 0.5126292}
-  m_LocalPosition: {x: 0.41, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4417800692048429328}
+  m_Father: {fileID: 3196108130421536879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -118.322}
 --- !u!212 &6375258717398862464
 SpriteRenderer:
@@ -194,6 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3196108130421536879}
   - component: {fileID: 1613331931870586503}
+  - component: {fileID: 304920571860819566}
   m_Layer: 3
   m_Name: "ng\u01B0\u1EDDi-removebg-preview"
   m_TagString: Untagged
@@ -209,11 +210,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462627029237633737}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1462078268620446351}
+  - {fileID: 9208313615327967893}
   m_Father: {fileID: 4417800692048429328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1613331931870586503
@@ -268,6 +271,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &304920571860819566
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462627029237633737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 444d5a0e785b65f4ea3e6cc9278c5028, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9140748696151406067
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +323,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3196108130421536879}
-  - {fileID: 1462078268620446351}
-  - {fileID: 9208313615327967893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &4447675846149487018
@@ -363,14 +385,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9220891150856614107}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.88498765, w: 0.4656145}
-  m_LocalPosition: {x: 0.05, y: -0.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.87881714, w: 0.4771588}
+  m_LocalPosition: {x: 0.1, y: -0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6345952956985114138}
-  m_Father: {fileID: 4417800692048429328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 124.5}
+  m_Father: {fileID: 3196108130421536879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123}
 --- !u!212 &4668183286201141277
 SpriteRenderer:
   m_ObjectHideFlags: 0
