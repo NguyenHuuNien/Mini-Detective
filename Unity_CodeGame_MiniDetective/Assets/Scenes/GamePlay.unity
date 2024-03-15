@@ -1776,6 +1776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1991560235}
   - component: {fileID: 1991560236}
+  - component: {fileID: 1991560237}
   m_Layer: 7
   m_Name: Dog_Black
   m_TagString: Untagged
@@ -1862,6 +1863,18 @@ PolygonCollider2D:
       - {x: 0.791522, y: -0.22357655}
       - {x: 0.76664865, y: 0.32054228}
   m_UseDelaunayMesh: 0
+--- !u!114 &1991560237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991560234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04c963185c355c49806a63b6559ec01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
