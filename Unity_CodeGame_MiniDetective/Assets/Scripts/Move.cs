@@ -8,10 +8,11 @@ public class Move : MonoBehaviour
     [SerializeField] private float speedMove = 350;
     [SerializeField] private float forceJump = 1500;
     [SerializeField] private Animator _animator;
-    private LayerMask _layerMask;
+    private LayerMask _layerMaskGround;
     private Rigidbody2D rb;
     private bool isGround;
     private bool isAttack = false;
+    private bool isRight = true;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class Move : MonoBehaviour
 
     void Start()
     {
-        _layerMask = LayerMask.GetMask("Ground");
+        _layerMaskGround = LayerMask.GetMask("Ground");
     }
 
     void Update()
@@ -89,7 +90,7 @@ public class Move : MonoBehaviour
         if (Mathf.Abs(horizontal) > 0.1f)
         {
             rb.velocity = new Vector2(horizontal * Time.fixedDeltaTime * speedMove, rb.velocity.y);
-            bool isRight = true;
+            isRight = true;
             if (horizontal > 0)
             {
                 isRight = true;
@@ -106,9 +107,19 @@ public class Move : MonoBehaviour
         if(isGround)
             _animator.SetFloat("move",Mathf.Abs(horizontal));
     }
+
+    public bool getIsAttack()
+    {
+        return isAttack;
+    }
+
+    public bool getIsRight()
+    {
+        return isRight;
+    }
     private bool checkGround()
     {
-        var hit = Physics2D.Raycast(transform.position,Vector3.down,1,_layerMask);
+        var hit = Physics2D.Raycast(transform.position,Vector3.down,1,_layerMaskGround);
         return hit.collider != null;
     }
 }
