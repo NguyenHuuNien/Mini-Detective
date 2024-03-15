@@ -11,23 +11,23 @@ public class Move : MonoBehaviour
     private LayerMask _layerMask;
     private Rigidbody2D rb;
     private bool isGround;
+    private bool isAttack = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _layerMask = LayerMask.GetMask("Ground");
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGround = checkGround();
         jump();
+        attack();
     }
 
     private void FixedUpdate()
@@ -35,6 +35,28 @@ public class Move : MonoBehaviour
         move();
     }
 
+    private void attack()
+    {
+        if (Input.GetKeyDown(KeyCode.S)&&!isAttack)
+        {
+            isAttack = true;
+            _animator.SetBool("attack",true);
+            Invoke(nameof(resetAttack),0.45f);
+        }
+        if (!isAttack)
+        {
+            _animator.SetBool("attack",false);
+        }
+        else
+        {
+            _animator.SetFloat("Jump",0);
+        }
+    }
+
+    private void resetAttack()
+    {
+        isAttack = false;
+    }
     private void jump()
     {
         if (isGround)
@@ -47,13 +69,17 @@ public class Move : MonoBehaviour
         }
         else
         {
+            if (isAttack)
+            {
+                return;
+            }
             if (rb.velocity.y > 0)
             {
                 _animator.SetFloat("Jump",1);
             }
             else
             {
-                _animator.SetFloat("Jump",2);
+                _animator.SetFloat("Jump", 2);
             }
         }
     }
