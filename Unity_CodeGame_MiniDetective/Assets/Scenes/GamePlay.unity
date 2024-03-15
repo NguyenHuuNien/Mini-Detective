@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 464376442}
   - component: {fileID: 464376441}
   - component: {fileID: 464376440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1267,7 @@ GameObject:
   - component: {fileID: 579138765}
   - component: {fileID: 579138767}
   - component: {fileID: 579138766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: anythings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579984689}
   - component: {fileID: 1579984690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417800692048429328, guid: e89dff6d69a047b4684f75af2bc74529, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.43
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4417800692048429328, guid: e89dff6d69a047b4684f75af2bc74529, type: 3}
       propertyPath: m_LocalPosition.y
