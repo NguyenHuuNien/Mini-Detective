@@ -87,7 +87,7 @@ public class Move : MonoBehaviour
     private void move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        if (Mathf.Abs(horizontal) > 0.1f)
+        if (Mathf.Abs(horizontal) > 0.1f && !isAttack)
         {
             rb.velocity = new Vector2(horizontal * Time.fixedDeltaTime * speedMove, rb.velocity.y);
             isRight = true;

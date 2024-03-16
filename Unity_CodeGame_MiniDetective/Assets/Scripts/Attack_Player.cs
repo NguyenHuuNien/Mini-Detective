@@ -10,6 +10,7 @@ public class Attack_Player : MonoBehaviour
     private Move _player;
     private Dog _dog;
     private bool nguaDon = true;
+    private RaycastHit2D hit;
 
     private void Awake()
     {
@@ -28,29 +29,34 @@ public class Attack_Player : MonoBehaviour
 
     private void checkEnemy_OpenSound()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * (_player.getIsRight()?1:-1),2 ,_layerMaskEnemy);
-        Debug.DrawLine(transform.position, transform.position + Vector3.right * 2, Color.blue);
+        hit = Physics2D.Raycast(transform.position+Vector3.up*0.5f, Vector2.right * (_player.getIsRight()?1:-1),2 ,_layerMaskEnemy);
+        Debug.DrawLine(transform.position+Vector3.up*0.5f, transform.position+Vector3.up*0.5f + Vector3.right * 2, Color.blue);
         if (_player.getIsAttack()&&nguaDon)
         {
             nguaDon = false;
-            if (!hit.collider)
+            attack();
+        }
+    }
+
+    private void attack()
+    {
+        if (!hit.collider)
+        {
+            _audioController.Audio_MissAttack();
+        }
+        else
+        {
+            if (_dog.NumChoang < 2)
             {
-                _audioController.Audio_MissAttack();
+                _audioController.Audio_Attack1();
+                _dog.NumChoang++;
+                Debug.Log("Hoc don");
             }
             else
             {
-                if (_dog.NumChoang < 2)
-                {
-                    _audioController.Audio_Attack1();
-                    _dog.NumChoang++;
-                    Debug.Log("Hoc don");
-                }
-                else
-                {
-                    _audioController.Audio_Attack2();
-                    _dog.NumChoang = 0;
-                    Debug.Log("Choang");
-                }
+                _audioController.Audio_Attack2();
+                _dog.NumChoang = 0;
+                Debug.Log("Choang");
             }
         }
     }
