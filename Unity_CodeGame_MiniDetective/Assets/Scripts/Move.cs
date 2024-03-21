@@ -83,7 +83,7 @@ public class Move : MonoBehaviour
                 _animator.SetFloat("Jump", 2);
             }
         }
-    }
+    } 
     private void move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
